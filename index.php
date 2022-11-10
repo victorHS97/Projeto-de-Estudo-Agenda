@@ -1,5 +1,6 @@
 <?php
-include_once('templates/header.php')
+include_once('templates/header.php');
+;
 ?>
     <div class="container">
     <?php if(isset($printMsg) && $printMsg != ''): ?>
@@ -24,7 +25,7 @@ include_once('templates/header.php')
                         <td scope = 'row'><?= $contact['number']?></td>
                     <td class="actions">
                          <a href="<?= $BASE_URL?>show.php?id=<?= $contact['id']?>"> <i class=" fas fa-eye check-icon"></i></a>
-                         <a href="#"> <i class=" far fa-edit edit-icon"></i></a>
+                         <a href="<?= $BASE_URL?>edit.php?id=<?= $contact['id']?>"> <i class=" far fa-edit edit-icon"></i></a>
                          <button type="submit" class="delete-btn"> <i class="fas fa-times delete-icon"></i></button>
                     </td>
                         
@@ -36,6 +37,7 @@ include_once('templates/header.php')
     <?php else: ?>
         <p id = "empty-list-text">Ainda não possui contatos na agenda, <a href="<?= $BASE_URL?>create.php">Clique para adiconar um contato</a></p>
     <?php endif?>
+    <?php include_once ("templates/addbtn.html"); ?>
     </div>
 
 
